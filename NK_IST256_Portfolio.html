@@ -45,15 +45,17 @@ a:focus {
 <body>
 
     <!-- ================= HEADER ================= -->
-    <header id="top">
+    <header id="top" class="site-header">
         <h1>Nathan Karp</h1>
         <p>
             I am an <strong>IT student</strong> learning web development and building my skills step-by-step.
-            I enjoy <em>hands-on</em> learning and keeping things <mark>simple</mark>.
+            I enjoy <em>hands-on</em> learning and keeping things 
+            <!-- Inline style used as a highlight color. -->
+            <mark style="background-color: #fff3b0;">simple</mark>.
         </p>
 
-        <!-- Image #1 (include width/height) -->
-        <img src="images/IMG_6407.jpeg" alt="Profile photo of Nathan Karp" width="200" height="200">
+        <!-- Image #1 -->
+        <img class="profile-image" src="images/IMG_6407.jpeg" alt="Profile photo of Nathan Karp" width="200" height="200">
 
         <p>
             Last updated:
@@ -62,8 +64,8 @@ a:focus {
     </header>
 
     <!-- ================= NAVIGATION ================= -->
-    <nav aria-label="Main navigation">
-        <ul>
+    <nav class="site-nav" aria-label="Main navigation"></nav>
+        <ul class="nav-list">
             <li><a href="#about">About Me</a></li>
             <li><a href="#skills">Skills</a></li>
             <li><a href="#projects">Projects</a></li>
@@ -72,11 +74,11 @@ a:focus {
     </nav>
 
     <!-- ================= MAIN CONTENT ================= -->
-    <div class="container">
+    <div class="page-layout">
 
         <main>
             <!-- ===== ABOUT SECTION ===== -->
-            <section id="about">
+            <section id="about" class="content-section">
                 <h2>About Me</h2>
 
                 <article>
@@ -117,7 +119,7 @@ a:focus {
             </section>
 
             <!-- ===== SKILLS SECTION ===== -->
-            <section id="skills">
+            <section id="skills" class="content-section">
                 <h2>Skills</h2>
 
                 <h3>My Specialties</h3>
@@ -179,7 +181,7 @@ a:focus {
             </section>
 
             <!-- ===== PROJECTS SECTION ===== -->
-            <section id="projects">
+            <section id="projects" class="content-section">
                 <h2>Projects</h2>
 
                 <article>
@@ -199,7 +201,7 @@ a:focus {
                 </article>
 
                 <figure>
-                    <img src="images/IST220 ProjectMap.png" alt="Screenshot showing a class project" width="600" height="300" loading="lazy">
+                    <img class="project-image" src="images/IST220 ProjectMap.png" alt="Screenshot showing a class project" width="600" height="500" loading="lazy">
                     <figcaption>Secure and reliable network for a 10-acre sports venue.</figcaption>
                 </figure>
 
@@ -210,7 +212,7 @@ a:focus {
             </section>
 
             <!-- ===== CONTACT SECTION ===== -->
-            <section id="contact">
+            <section id="contact" class="content-section">
                 <h2>Contact</h2>
 
                 <p>Email: <a href="mailto:n.karp8@gmail.com">n.karp8@gmail.com</a></p>
@@ -221,7 +223,7 @@ a:focus {
                     <a href="pdf/Resume - Nathan Karp.pdf" download>Resume (PDF)</a>
                 </p>
 
-                <form action="#" method="post" aria-label="Contact form">
+                <form class="contact-form" action="#" method="post" aria-label="Contact form">
                     <fieldset>
                         <legend>Send me a message</legend>
 
@@ -252,7 +254,7 @@ a:focus {
         </main>
 
         <!-- ================= ASIDE ================= -->
-        <aside>
+        <aside class="side-bar">
             <h2>Quick Facts</h2>
             <ul>
                 <li>Major: Information Technology</li>
@@ -269,7 +271,7 @@ a:focus {
     </div>
 
     <!-- ================= FOOTER ================= -->
-    <footer>
+    <footer class="site-footer">
         <p>&copy; 2026 Nathan Karp</p>
         <p>
             Last updated:
