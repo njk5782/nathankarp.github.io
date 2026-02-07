@@ -1,0 +1,71 @@
+/*
+Nathan Karp
+njk5782
+IST256 Programming for the Web
+Assignment 2 - CSS Portfolio Enhancement
+CSS stylesheet for my portfolio page.
+
+TABLE OF CONTENTS
+1. Reset / Global Defaults
+2. CSS Custom Properties
+3. Base Typography
+4. Layout
+5. Header Styles
+6. Navigation Styles
+7. Main Content Styles
+8. Media Styles
+9. Table Styles
+10. Form Styles
+11. Aside Styles
+12. Footer Styles
+13. Transitions & Animations
+14. Responsive Media Queries
+*/
+
+/*
+   1. Reset / Global Defaults
+*/
+* {
+    box-sizing: border-box;
+}
+
+/*
+   2. CSS Custom Properties
+*/
+:root {
+    /* Colors */
+    --color-text: #111111;
+    --color-bg: #ffffff;
+    --color-primary: #1d4ed8;
+    --color-secondary: #0f766e;
+    --color-border: #dddddd;
+
+    /* Typography */
+    --font-body: Arial, sans-serif;
+    --font-mono: "Courier New", monospace;
+
+    /* Spacing */
+    --space-1: 0.25rem;
+    --space-2: 0.5rem;
+    --space-3: 1rem;
+    --space-4: 1.5rem;
+    --space-5: 2rem;
+
+    /* Radius + Shadow */
+    --radius-1: 6px;
+    --shadow-1: 0 2px 8px rgba(0, 0, 0, 0.08);
+
+    /* Transitions */
+    --transition-fast: 150ms ease;
+}
+
+/*
+   3. Base Typography
+*/
+body {
+    margin: 0;
+    font-family: var(--font-body);
+    color: var(--color-text);
+    background: var(--color-bg);
+    line-height: 1.6;
+}
