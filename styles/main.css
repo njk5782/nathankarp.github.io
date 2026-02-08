@@ -196,14 +196,32 @@ aside li {
    6. Navigation list
 */
 
-.site-nav ul {
-    list-style: none;
+.site-nav .nav-list {
+    display: flex;
+    gap: var(--space-3);
+    flex-wrap: wrap;
     padding-left: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.site-nav .nav-list li {
     margin: 0;
 }
 
-.site-nav li {
-    margin-bottom: var(--space-2);
+.site-nav a {
+    display: inline-block;
+    padding: 0.5rem 0.75rem;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-1);
+    background-color: rgba(255, 255, 255, 0.04);
+    transition: background-color var(--transition-fast), transform var(--transition-fast);
+}
+
+.site-nav a:hover {
+    background-color: rgba(56, 189, 248, 0.15);
+    text-decoration: none;
+    transform: translateY(-1px);
 }
 
 /*
