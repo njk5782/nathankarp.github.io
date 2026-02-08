@@ -6,7 +6,7 @@ Assignment 2 - CSS Portfolio Enhancement
 CSS stylesheet for my portfolio page.
 
 TABLE OF CONTENTS
-1. Reset / Global Defaults
+1. Global Defaults
 2. CSS Custom Properties
 3. Base Typography
 4. Layout
@@ -23,10 +23,24 @@ TABLE OF CONTENTS
 */
 
 /*
-   1. Reset / Global Defaults
+   1. Global Defaults
 */
 * {
     box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: var(--font-body);
+    line-height: 1.6;
+    background-color: var(--color-bg);
+    color: var(--color-text);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
 }
 
 /*
