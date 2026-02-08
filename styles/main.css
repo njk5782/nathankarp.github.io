@@ -18,6 +18,7 @@ TABLE OF CONTENTS
 10. Table Styling
 11. Form Styling
 12. Selectors
+13. Gradients, Animations, and Reduced Motion
 */
 
 /*
@@ -31,7 +32,6 @@ body {
     margin: 0;
     font-family: var(--font-body);
     line-height: 1.6;
-    background-color: var(--color-bg);
     color: var(--color-text);
 }
 
@@ -72,6 +72,12 @@ img {
     --shadow-1: 0 10px 30px rgba(0, 0, 0, 0.45);
 
     --transition-fast: 150ms ease;
+    
+    /* Semantic colors */
+    --color-success: #22c55e;
+    --color-warning: #f59e0b;
+    --color-danger: #ef4444;
+    --color-info: #60a5fa;
 }
 
 /*
@@ -449,4 +455,65 @@ h3 + p {
 
 .site-nav a:hover {
     text-decoration: none;
+}
+
+/*
+   13. Gradients, Animations, and Reduced Motion
+*/
+
+/* Gradients */
+body {
+    background: linear-gradient(180deg, var(--color-bg), #0b1224);
+}
+
+.site-nav {
+    background: linear-gradient(90deg, rgba(56, 189, 248, 0.12), rgba(255, 255, 255, 0.02));
+    border-bottom: 1px solid var(--color-border);
+}
+
+/* Transitions on cards */
+.content-section,
+.sidebar {
+    transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+/* Animation #1 */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.content-section,
+.sidebar {
+    animation: fadeInUp 500ms ease both;
+}
+
+/* Animation #2 */
+@keyframes focusGlow {
+    0% {
+        box-shadow: 0 0 0 rgba(56, 189, 248, 0);
+    }
+    100% {
+        box-shadow: 0 0 0.75rem rgba(56, 189, 248, 0.35);
+    }
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    animation: focusGlow 250ms ease-out both;
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation: none !important;
+        transition: none !important;
+        scroll-behavior: auto !important;
+    }
 }
