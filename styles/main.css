@@ -17,6 +17,7 @@ TABLE OF CONTENTS
 9. Responsive Breakpoints
 10. Table Styling
 11. Form Styling
+12. Selectors
 */
 
 /*
@@ -407,4 +408,45 @@ tbody tr:hover {
 
 .contact-form button:active {
     transform: translateY(0);
+}
+
+/*
+   12. Selectors
+*/
+
+/* Attribute selectors */
+
+a[target="_blank"] {
+    border-bottom: 2px dotted rgba(56, 189, 248, 0.6);
+}
+
+a[href^="mailto:"],
+a[href^="tel:"] {
+    font-weight: 600;
+}
+
+/* Pseudo-elements */
+
+a[target="_blank"]::after {
+    content: " ↗";
+    font-size: 0.9em;
+    color: var(--color-muted);
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+    color: rgba(203, 213, 225, 0.75);
+}
+
+
+/* Sibling selector */
+
+h3 + p {
+    margin-top: var(--space-2);
+}
+
+/* Child selector */
+
+.site-nav a:hover {
+    text-decoration: none;
 }
