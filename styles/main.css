@@ -8,11 +8,11 @@ CSS stylesheet for my portfolio page.
 TABLE OF CONTENTS
 1. Global Defaults
 2. CSS Custom Properties
-3. Base Typography
-4. Layout
-5. Header Styles
-6. Navigation Styles
-7. Main Content Styles
+3. Typography
+4. Links
+5. Layout Spacing
+6. Navigation List
+7. Images
 8. Media Styles
 9. Table Styles
 10. Form Styles
@@ -142,4 +142,75 @@ a:focus {
 
 a:visited {
     color: #a78bfa;
+}
+
+/*
+   5. Layout spacing
+*/
+
+.site-header,
+.site-nav,
+.site-footer {
+    padding: var(--space-4);
+}
+
+.site-header {
+    border-bottom: 1px solid var(--color-border);
+}
+
+.content-section,
+.sidebar {
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-2);
+    padding: var(--space-4);
+    margin: var(--space-4);
+    box-shadow: var(--shadow-1);
+}
+
+aside {
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-2);
+    padding: var(--space-4);
+    margin: var(--space-4);
+    box-shadow: var(--shadow-1);
+}
+
+aside ul {
+    margin: 0;
+    padding-left: var(--space-4);
+}
+
+aside li {
+    margin-bottom: var(--space-2);
+}
+
+.site-footer {
+    text-align: center;
+    color: var(--color-muted);
+    border-top: 1px solid var(--color-border);
+}
+
+/*
+   6. Navigation list
+*/
+
+.site-nav ul {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+.site-nav li {
+    margin-bottom: var(--space-2);
+}
+
+/*
+   7. Images
+*/
+
+.profile-image {
+    max-width: 200px;
+    margin-bottom: var(--space-3);
 }
