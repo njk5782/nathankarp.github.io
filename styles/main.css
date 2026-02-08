@@ -11,15 +11,12 @@ TABLE OF CONTENTS
 3. Typography
 4. Links
 5. Layout Spacing
-6. Navigation List
+6. Flexbox Navigation List
 7. Images
 8. Grid Layout
 9. Responsive Breakpoints
-10. Form Styles
-11. Aside Styles
-12. Footer Styles
-13. Transitions & Animations
-14. Responsive Media Queries
+10. Table Styling
+11. Form Styling
 */
 
 /*
@@ -158,6 +155,10 @@ a:visited {
     border-bottom: 1px solid var(--color-border);
 }
 
+.site-header > * {
+    max-width: 60ch;
+}
+
 .content-section,
 .sidebar {
     background-color: var(--color-surface);
@@ -178,24 +179,6 @@ a:visited {
     line-height: 1.5;
 }
 
-aside {
-    background-color: var(--color-surface);
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-2);
-    padding: var(--space-4);
-    margin: var(--space-4);
-    box-shadow: var(--shadow-1);
-}
-
-aside ul {
-    margin: 0;
-    padding-left: var(--space-4);
-}
-
-aside li {
-    margin-bottom: var(--space-2);
-}
-
 .site-footer {
     text-align: center;
     color: var(--color-muted);
@@ -203,7 +186,7 @@ aside li {
 }
 
 /*
-   6. Navigation list
+   6. Flexbox Navigation List
 */
 
 .site-nav .nav-list {
@@ -308,8 +291,120 @@ aside li {
     .site-footer {
         max-width: 1200px;
     }
+}
 
-    .site-header > * {
-    max-width: 60ch;
-    }
+/*
+   10.Table styling
+*/
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: var(--space-3);
+    overflow: hidden;
+    border-radius: var(--radius-2);
+}
+
+caption {
+    text-align: left;
+    font-weight: 600;
+    margin-bottom: var(--space-2);
+    color: var(--color-muted);
+}
+
+th,
+td {
+    padding: 0.75rem;
+    border-bottom: 1px solid var(--color-border);
+    text-align: left;
+}
+
+thead th {
+    background-color: rgba(255, 255, 255, 0.06);
+}
+
+tbody tr:nth-child(even) {
+    background-color: rgba(255, 255, 255, 0.03);
+}
+
+tbody tr:hover {
+    background-color: rgba(56, 189, 248, 0.10);
+}
+
+/*
+   11. Form styling
+*/
+
+.contact-form {
+    margin-top: var(--space-3);
+}
+
+.contact-form fieldset {
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-2);
+    padding: var(--space-4);
+}
+
+.contact-form legend {
+    padding: 0 var(--space-2);
+    font-weight: 600;
+    color: var(--color-muted);
+}
+
+.contact-form label {
+    display: inline-block;
+    margin-bottom: var(--space-1);
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border-radius: var(--radius-1);
+    border: 1px solid var(--color-border);
+    background-color: rgba(255, 255, 255, 0.06);
+    color: var(--color-text);
+    font-family: inherit;
+}
+
+.contact-form textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: 3px solid rgba(56, 189, 248, 0.45);
+    outline-offset: 2px;
+    border-color: rgba(56, 189, 248, 0.7);
+}
+
+.contact-form input:valid,
+.contact-form textarea:valid {
+    border-color: rgba(34, 197, 94, 0.7);
+}
+
+.contact-form input:invalid:focus,
+.contact-form textarea:invalid:focus {
+    border-color: rgba(239, 68, 68, 0.7);
+}
+
+.contact-form button {
+    margin-top: var(--space-3);
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-1);
+    background-color: rgba(56, 189, 248, 0.18);
+    color: var(--color-text);
+    cursor: pointer;
+    transition: transform var(--transition-fast), background-color var(--transition-fast);
+}
+
+.contact-form button:hover {
+    background-color: rgba(56, 189, 248, 0.28);
+    transform: translateY(-1px);
+}
+
+.contact-form button:active {
+    transform: translateY(0);
 }
