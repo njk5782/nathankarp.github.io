@@ -19,6 +19,7 @@ TABLE OF CONTENTS
 11. Form Styling
 12. Selectors
 13. Gradients, Animations, and Reduced Motion
+14. Section Toggle Button Styling
 */
 
 /*
@@ -516,4 +517,22 @@ body {
         transition: none !important;
         scroll-behavior: auto !important;
     }
+}
+
+/*
+    14. Section Toggle Button Styling
+*/
+
+.toggle-btn {
+  margin: 0.5rem 0 1rem;
+  padding: 0.5rem 0.75rem;
+  border-radius: var(--radius-1);
+  border: 1px solid var(--color-border);
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--color-text);
+  cursor: pointer;
+}
+
+.toggle-btn:hover {
+  background: rgba(56, 189, 248, 0.18);
 }
