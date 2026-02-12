@@ -73,3 +73,21 @@ if (projectsBtn && projectsBody) {
     }
   });
 }
+
+// Toggle Contact section
+const contactBtn = document.querySelector('.toggle-btn[data-target="contact"]');
+const contactBody = document.querySelector("#contact-body");
+
+if (contactBtn && contactBody) {
+  contactBtn.addEventListener("click", () => {
+    const hidden = contactBody.hasAttribute("hidden");
+
+    if (hidden) {
+      contactBody.removeAttribute("hidden");
+      contactBtn.textContent = "Hide Contact";
+    } else {
+      contactBody.setAttribute("hidden", "");
+      contactBtn.textContent = "Show Contact";
+    }
+  });
+}
