@@ -21,76 +21,34 @@ if (projectImg) {
   });
 }
 
-// Toggle Skills section
-const skillsBtn = document.querySelector('.toggle-btn[data-target="skills"]');
-const skillsSection = document.querySelector("#skills-body");
+// Toggle About, Skills, Projects, and Contact sections
+function setupToggle(sectionId, buttonSelector, label) {
+  const body = document.querySelector(`#${sectionId}-body`);
+  const btn = document.querySelector(buttonSelector);
 
-if (skillsBtn && skillsSection) {
-  skillsBtn.addEventListener("click", () => {
-    const isHidden = skillsSection.hasAttribute("hidden");
-    if (isHidden) {
-      skillsSection.removeAttribute("hidden");
-      skillsBtn.textContent = "Hide Skills";
-    } else {
-      skillsSection.setAttribute("hidden", "");
-      skillsBtn.textContent = "Show Skills";
-    }
-  });
-}
+  if (!body || !btn) return;
 
-// Toggle About section
-const aboutBtn = document.querySelector('.toggle-btn[data-target="about"]');
-const aboutBody = document.querySelector("#about-body");
+  // Set initial button text based on current state
+  btn.textContent = body.hasAttribute("hidden") ? `Show ${label}` : `Hide ${label}`;
 
-if (aboutBtn && aboutBody) {
-  aboutBtn.addEventListener("click", () => {
-    const hidden = aboutBody.hasAttribute("hidden");
+  btn.addEventListener("click", () => {
+    const hidden = body.hasAttribute("hidden");
 
     if (hidden) {
-      aboutBody.removeAttribute("hidden");
-      aboutBtn.textContent = "Hide About";
+      body.removeAttribute("hidden");
+      btn.textContent = `Hide ${label}`;
     } else {
-      aboutBody.setAttribute("hidden", "");
-      aboutBtn.textContent = "Show About";
+      body.setAttribute("hidden", "");
+      btn.textContent = `Show ${label}`;
     }
   });
 }
 
-// Toggle Projects section
-const projectsBtn = document.querySelector('.toggle-btn[data-target="projects"]');
-const projectsBody = document.querySelector("#projects-body");
-
-if (projectsBtn && projectsBody) {
-  projectsBtn.addEventListener("click", () => {
-    const hidden = projectsBody.hasAttribute("hidden");
-
-    if (hidden) {
-      projectsBody.removeAttribute("hidden");
-      projectsBtn.textContent = "Hide Projects";
-    } else {
-      projectsBody.setAttribute("hidden", "");
-      projectsBtn.textContent = "Show Projects";
-    }
-  });
-}
-
-// Toggle Contact section
-const contactBtn = document.querySelector('.toggle-btn[data-target="contact"]');
-const contactBody = document.querySelector("#contact-body");
-
-if (contactBtn && contactBody) {
-  contactBtn.addEventListener("click", () => {
-    const hidden = contactBody.hasAttribute("hidden");
-
-    if (hidden) {
-      contactBody.removeAttribute("hidden");
-      contactBtn.textContent = "Hide Contact";
-    } else {
-      contactBody.setAttribute("hidden", "");
-      contactBtn.textContent = "Show Contact";
-    }
-  });
-}
+// One call per section
+setupToggle("about", '.toggle-btn[data-target="about"]', "About");
+setupToggle("skills", '.toggle-btn[data-target="skills"]', "Skills");
+setupToggle("projects", '.toggle-btn[data-target="projects"]', "Projects");
+setupToggle("contact", '.toggle-btn[data-target="contact"]', "Contact");
 
 // Handle contact form submission with feedback
 const contactForm = document.querySelector(".contact-form");
