@@ -55,3 +55,21 @@ if (aboutBtn && aboutBody) {
     }
   });
 }
+
+// Toggle Projects section
+const projectsBtn = document.querySelector('.toggle-btn[data-target="projects"]');
+const projectsBody = document.querySelector("#projects-body");
+
+if (projectsBtn && projectsBody) {
+  projectsBtn.addEventListener("click", () => {
+    const hidden = projectsBody.hasAttribute("hidden");
+
+    if (hidden) {
+      projectsBody.removeAttribute("hidden");
+      projectsBtn.textContent = "Hide Projects";
+    } else {
+      projectsBody.setAttribute("hidden", "");
+      projectsBtn.textContent = "Show Projects";
+    }
+  });
+}
