@@ -91,3 +91,21 @@ if (contactBtn && contactBody) {
     }
   });
 }
+
+// Handle contact form submission with feedback
+const contactForm = document.querySelector(".contact-form");
+const feedback = document.querySelector("#form-feedback");
+
+if (contactForm && feedback) {
+  contactForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    const nameValue = document.querySelector("#name")?.value.trim();
+    const name = nameValue ? nameValue : "there";
+
+    feedback.textContent = `Thanks, ${name}! Your message was received.`;
+    feedback.style.marginTop = "1rem";
+
+    contactForm.reset();
+  });
+}
