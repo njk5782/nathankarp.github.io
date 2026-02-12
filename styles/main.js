@@ -36,7 +36,22 @@ if (skillsBtn && skillsSection) {
       skillsBtn.textContent = "Show Skills";
     }
   });
+}
 
-  // Set initial button text
-  skillsBtn.textContent = "Hide Skills";
+// Toggle About section
+const aboutBtn = document.querySelector('.toggle-btn[data-target="about"]');
+const aboutBody = document.querySelector("#about-body");
+
+if (aboutBtn && aboutBody) {
+  aboutBtn.addEventListener("click", () => {
+    const hidden = aboutBody.hasAttribute("hidden");
+
+    if (hidden) {
+      aboutBody.removeAttribute("hidden");
+      aboutBtn.textContent = "Hide About";
+    } else {
+      aboutBody.setAttribute("hidden", "");
+      aboutBtn.textContent = "Show About";
+    }
+  });
 }
