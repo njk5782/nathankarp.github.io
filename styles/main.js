@@ -20,3 +20,23 @@ if (projectImg) {
     projectImg.style.transform = "scale(1)";
   });
 }
+
+// Toggle Skills section
+const skillsBtn = document.querySelector('.toggle-btn[data-target="skills"]');
+const skillsSection = document.querySelector("#skills-body");
+
+if (skillsBtn && skillsSection) {
+  skillsBtn.addEventListener("click", () => {
+    const isHidden = skillsSection.hasAttribute("hidden");
+    if (isHidden) {
+      skillsSection.removeAttribute("hidden");
+      skillsBtn.textContent = "Hide Skills";
+    } else {
+      skillsSection.setAttribute("hidden", "");
+      skillsBtn.textContent = "Show Skills";
+    }
+  });
+
+  // Set initial button text
+  skillsBtn.textContent = "Hide Skills";
+}
