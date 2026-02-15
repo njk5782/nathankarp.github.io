@@ -20,7 +20,7 @@ TABLE OF CONTENTS
 12. Selectors
 13. Gradients, Animations, and Reduced Motion
 14. Section Toggle Button Styling
-15. Change Bootstrap font color
+15. Change Bootstrap Colors
 */
 
 /*
@@ -539,8 +539,14 @@ body {
 }
 
 /* 
-    15. Change Bootstrap font color
+    15. Change Bootstrap Colors
 */
 .sidebar.card {
   color: var(--color-text);
+}
+
+.card {
+  background-color: var(--color-surface);
+  color: var(--color-text);
+  border-color: var(--color-border);
 }
