@@ -20,6 +20,7 @@ TABLE OF CONTENTS
 12. Selectors
 13. Gradients, Animations, and Reduced Motion
 14. Section Toggle Button Styling
+15. Change Bootstrap font color
 */
 
 /*
@@ -535,4 +536,11 @@ body {
 
 .toggle-btn:hover {
   background: rgba(56, 189, 248, 0.18);
+}
+
+/* 
+    15. Change Bootstrap font color
+*/
+.sidebar.card {
+  color: var(--color-text);
 }
