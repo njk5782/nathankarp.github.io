@@ -62,8 +62,16 @@ if (contactForm && feedback) {
     const name = nameValue ? nameValue : "there";
 
     feedback.textContent = `Thanks, ${name}! Your message was received.`;
-    feedback.style.marginTop = "1rem";
+    // Show Bootstrap alert
+    feedback.classList.remove("d-none");
+    feedback.classList.add("alert-success");
+    feedback.classList.remove("alert-danger");
 
     contactForm.reset();
+    // Hide feedback after 4 seconds
+    setTimeout(() => {
+        feedback.classList.add("d-none");
+        feedback.textContent = "";
+    }, 4000);
   });
 }
