@@ -213,6 +213,13 @@
                             I designed a network for a 10-acre sports venue that ensures secure and reliable connectivity
                             as well as live streaming capabilities.
                         </p>
+
+                        <button type="button"
+                            class="btn btn-info btn-sm"
+                            data-bs-toggle="modal"
+                            data-bs-target="#projectModal">
+                            View Project Details
+                        </button>
                     </div>
                 </article>
 
@@ -303,6 +310,38 @@
         </p>
         <p><a href="#top">Back to top</a></p>
     </footer>
+
+    <div class="modal fade" id="projectModal" tabindex="-1"
+        aria-labelledby="projectModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content bg-dark text-light">
+                <div class="modal-header">
+                    <h2 class="modal-title h5" id="projectModalLabel">Project Details</h2>
+                    <button type="button" class="btn-close btn-close-white"
+                        data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+
+                <div class="modal-body">
+                    <p>
+                        <strong>Network for a Sports Venue:</strong>
+                        Designed a network plan for a 10-acre venue with secure WiFi coverage and support for livestreaming.
+                    </p>
+
+                    <ul class="mb-0">
+                        <li>Planned coverage and access needs</li>
+                        <li>Considered reliability and security</li>
+                        <li>Supported multiple simultaneous events</li>
+                    </ul>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                        Close
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <script src="styles/main.js" defer></script>
 
