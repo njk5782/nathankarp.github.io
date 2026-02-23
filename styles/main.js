@@ -75,3 +75,23 @@ if (contactForm && feedback) {
     }, 4000);
   });
 }
+
+// Back-to-Top Button Functionality
+const backToTopBtn = document.getElementById("backToTopBtn");
+
+// Show button when scrolling down
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 300) {
+    backToTopBtn.classList.remove("d-none");
+  } else {
+    backToTopBtn.classList.add("d-none");
+  }
+});
+
+// Scroll to top when clicked
+backToTopBtn.addEventListener("click", () => {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
+});
